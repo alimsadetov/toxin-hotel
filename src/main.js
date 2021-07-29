@@ -1,4 +1,4 @@
-import './assets/variables.scss'
+import './assets/_variables.scss'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'

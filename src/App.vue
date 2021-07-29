@@ -8,6 +8,7 @@ export default {
 }
 </script>
 <style lang="scss">
+@import 'assets/variables';
 body, html {
   padding: 0;
   margin: 0;
