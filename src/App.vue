@@ -1,14 +1,16 @@
 <template>
   <TheHeader></TheHeader>
   <ThePrefooter></ThePrefooter>
+  <TheFooter></TheFooter>
 </template>
 <script>
 
 import TheHeader from './components/TheHeader.vue'
 import ThePrefooter from './components/ThePrefooter.vue'
+import TheFooter from './components/TheFooter.vue'
 
 export default {
-  components: { TheHeader, ThePrefooter }
+  components: { TheHeader, ThePrefooter, TheFooter }
 }
 
 </script>
