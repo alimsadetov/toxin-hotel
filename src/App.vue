@@ -1,5 +1,6 @@
 <template>
   <TheHeader></TheHeader>
+  <router-view></router-view>
   <ThePrefooter></ThePrefooter>
   <TheFooter></TheFooter>
 </template>
