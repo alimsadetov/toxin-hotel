@@ -35,7 +35,6 @@
                   <div class="subscribe-please-text">Получайте специальные предложения и новости сервиса</div>
                   <div class="subscribe">
                       <input type="text" placeholder="Email"/>
-                      <span>arrow_forward</span>
                   </div>
               </div>
 
@@ -135,23 +134,6 @@ input {
     border-radius: 4px;
     color:$dark25;
     @extend %body;
-}
-
-span {
-    position: absolute;
-    height:44px;
-    width:44px;
-    left:255px;
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color:$purple;
-    cursor:pointer;
 }
 
 .simple:hover {

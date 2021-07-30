@@ -11,8 +11,8 @@
           <div class="simple">Вакансии</div>
           <div class="simple">Новости</div>
           <div class="expandable">Соглашения<span>expand_more</span></div>
-          <button class="sign-in">Войти</button>
-        <button class="registration">Зарегистрироваться</button>
+          <div class="sign-in">Войти</div>
+        <div class="registration">Зарегистрироваться</div>
       </div>
 
       <div class="auth"></div>
@@ -63,8 +63,8 @@ export default {
 }
 
 .sign-in {
-    width: 87px;
-    height: 34px;
+    width: 13%;
+    height: 25px;
     margin-top: 18px;
     border-radius: 22px;
     border: 2px solid;
@@ -73,6 +73,8 @@ export default {
     background-color: #FFFFFF;
     @extend %h3;
     color:$purple;
+    text-align:center;
+    padding-top:9px;
 }
 
 .sign-in:hover, .registration:hover {
@@ -81,14 +83,16 @@ export default {
 }
 
 .registration {
-    width: 196px;
-    height: 34px;
+    width: 23%;
+    height: 25px;
     margin-top: 18px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 22px;
-    border-color:$purple;
+    border-color:#FFFFFF;
     color:#FFFFFF;
     @extend %h3;
+    text-align:center;
+    padding-top:9px;
 }
 
 span {
@@ -108,5 +112,53 @@ span {
 span:hover, .simple:hover, .expandable:hover {
     color:$dark100;
     cursor:pointer;
+}
+
+@media (max-width:1090px) {
+    .registration {
+        font-size:10px;
+    }
+    .sign-in {
+        font-size:10px;
+    }
+    .navbar {
+        margin-left:370px;
+    }
+}
+
+@media (max-width:1000px) {
+    .registration {
+        font-size:10px;
+    }
+    .sign-in {
+        font-size:10px;
+    }
+    .navbar {
+        margin-left:340px;
+    }
+}
+
+@media (max-width:970px) {
+    .registration {
+        font-size:10px;
+    }
+    .sign-in {
+        font-size:10px;
+    }
+    .navbar {
+        margin-left:300px;
+    }
+}
+
+@media (max-width:900px) {
+    .registration {
+        font-size:10px;
+    }
+    .sign-in {
+        font-size:10px;
+    }
+    .navbar {
+        margin-left:120px;
+    }
 }
 </style>
