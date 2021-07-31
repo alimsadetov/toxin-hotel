@@ -1,6 +1,6 @@
 <template>
 
-<div class="header">
+<div class="header" @addUser="add">
     <div class="container">
       <img src="../assets/logo.svg" alt="logo" class="logo" @click="$router.push('/main')">
       <img src="../assets/TOXIN.svg" alt="toxin" class="toxin" @click="$router.push('/main')">
@@ -11,11 +11,10 @@
           <div class="simple">Вакансии</div>
           <div class="simple">Новости</div>
           <div class="simple">Соглашения</div>
-          <div class="sign-in" @click="$router.push('/signin')">Войти</div>
+          <div class="sign-in" @click="$router.push('/signin')" v-if="!username">Войти</div>
+          <div class="username" v-if="username">{{ username }}</div>
         <!--<div class="registration">Зарегистрироваться</div>-->
       </div>
-
-      <div class="auth"></div>
     </div>
 </div>
 
@@ -23,7 +22,24 @@
 
 <script>
 export default {
-
+  props: {
+    username: String
+  },
+  data () {
+    return {
+      user: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    add (email, password) {
+      this.user.email = email
+      this.user.password = password
+      console.log(this.user.email)
+    }
+  }
 }
 </script>
 
@@ -99,6 +115,12 @@ export default {
 .simple:hover {
     color:$dark100;
     cursor:pointer;
+}
+
+.username {
+    @extend %body;
+    margin-top: 23px;
+    color:$purple;
 }
 
 @media (max-width:1090px) {

@@ -1,24 +1,50 @@
 <template>
-  <div class="sign-in">
+  <div class="sign-in-vidget">
       <form>
       <div class="title">Войти</div>
-      <input type="email" class="email" placeholder="Email">
-      <input type="password" class="password" placeholder="Пароль">
-      <div class="button">Войти</div>
+      <input type="email" class="email" placeholder="Email или имя пользователя" v-model="email">
+      <div class="error-two" v-if="!validtwo">Длина вашего Email не может превышать 30 символов</div>
+      <input type="password" class="password" placeholder="Пароль" v-model="password">
+      <div class="error" v-if="!valid">Пожалуйста, заполните все поля</div>
+      <div class="button" @click.prevent="validation(email, password)">Войти</div>
       </form>
   </div>
 </template>
 
 <script>
 export default {
-
+  inject: ['addUser'],
+  data () {
+    return {
+      email: '',
+      password: '',
+      valid: true,
+      validtwo: true
+    }
+  },
+  methods: {
+    validation (email, password) {
+      if (this.email === '' || this.password === '') {
+        this.valid = false
+        return false
+      };
+      if (this.email.length >= 30) {
+        this.validtwo = false
+        console.log(this.validtwo)
+        return false
+      }
+      this.valid = true
+      this.addUser(email, password)
+      this.$router.push('/main')
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../assets/variables';
 
-.sign-in {
+.sign-in-vidget {
     width: 380px;
     height: 350px;
     padding:30px;
@@ -78,5 +104,17 @@ export default {
 .button:hover {
     opacity:0.5;
     cursor:pointer;
+}
+
+.error {
+    @extend %body;
+    color:$dark75;
+    margin-top:10px;
+}
+
+.error-two {
+    @extend %body;
+    color:$dark75;
+    margin-top:10px;
 }
 </style>
