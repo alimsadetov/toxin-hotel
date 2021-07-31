@@ -1,5 +1,5 @@
 <template>
-  <TheHeader></TheHeader>
+  <TheHeader :username="user.email"></TheHeader>
   <router-view></router-view>
   <ThePrefooter></ThePrefooter>
   <TheFooter></TheFooter>
@@ -11,7 +11,27 @@ import ThePrefooter from './components/ThePrefooter.vue'
 import TheFooter from './components/TheFooter.vue'
 
 export default {
-  components: { TheHeader, ThePrefooter, TheFooter }
+  components: { TheHeader, ThePrefooter, TheFooter },
+  data () {
+    return {
+      user: {
+        email: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    addUser (email, password) {
+      this.user.email = email
+      this.user.password = password
+      console.log(this.user.email)
+    }
+  },
+  provide () {
+    return {
+      addUser: this.addUser
+    }
+  }
 }
 
 </script>
