@@ -1,30 +1,30 @@
 <template>
-  <div class="landing">
-      <div class="landing-background">
+  <div class="sign-in">
+      <div class="sign-in-background">
       <div class="container">
           <div class="cringy"></div>
-          <Picking></Picking>
+          <SignIn></SignIn>
       </div>
       </div>
   </div>
 </template>
 
 <script>
-import Picking from '../components/PickingVidget.vue'
+import SignIn from '../components/SignInVidget.vue'
 
 export default {
-  components: { Picking }
+  components: { SignIn }
 }
 </script>
 
 <style lang="scss" scoped>
-.landing {
+.sign-in {
     height:830px;
 }
 
-.landing-background {
+.sign-in-background {
     height:830px;
-    background: url('../assets/landing-background.png');
+    background: url('../assets/sign-in-background.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -33,4 +33,5 @@ export default {
     margin-top:0;
     height:1px;
 }
+
 </style>
