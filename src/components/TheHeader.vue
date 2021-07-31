@@ -2,17 +2,17 @@
 
 <div class="header">
     <div class="container">
-      <img src="../assets/logo.svg" alt="logo" class="logo">
-      <img src="../assets/TOXIN.svg" alt="toxin" class="toxin">
+      <img src="../assets/logo.svg" alt="logo" class="logo" @click="$router.push('/main')">
+      <img src="../assets/TOXIN.svg" alt="toxin" class="toxin" @click="$router.push('/main')">
 
       <div class="navbar">
           <div class="simple">О нас</div>
-          <div class="expandable">Услуги<span>expand_more</span></div>
+          <div class="simple">Услуги</div>
           <div class="simple">Вакансии</div>
           <div class="simple">Новости</div>
-          <div class="expandable">Соглашения<span>expand_more</span></div>
-          <div class="sign-in">Войти</div>
-        <div class="registration">Зарегистрироваться</div>
+          <div class="simple">Соглашения</div>
+          <div class="sign-in" @click="$router.push('/signin')">Войти</div>
+        <!--<div class="registration">Зарегистрироваться</div>-->
       </div>
 
       <div class="auth"></div>
@@ -45,6 +45,11 @@ export default {
     margin-left: 10px;
     float:left;
 }
+
+.logo:hover, .toxin:hover {
+    cursor:pointer;
+}
+
 .navbar {
     margin-left:400px;
     margin-right:0px;
@@ -52,14 +57,10 @@ export default {
     justify-content: space-between;
 }
 
-.simple, .expandable {
+.simple {
     @extend %body;
     margin-top: 24px;
     color:$dark50;
-}
-
-.expandable {
-    display:flex;
 }
 
 .sign-in {
@@ -95,21 +96,7 @@ export default {
     padding-top:9px;
 }
 
-span {
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 20px;
-/* identical to box height */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top:-3px;
-}
-
-span:hover, .simple:hover, .expandable:hover {
+.simple:hover {
     color:$dark100;
     cursor:pointer;
 }
