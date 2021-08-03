@@ -9,11 +9,13 @@
       </div>
       <div class="guests-text">гости</div>
       <input type="text" class="guests-dropdown" placeholder="Сколько гостей" readonly>
-      <div class="button">подобрать номер</div>
+      <picking-vidget-dropdown></picking-vidget-dropdown>
+      <router-link to="/rooms"><div class="button">подобрать номер</div></router-link>
   </div>
 </template>
 
 <script>
+// import PickingVidgetDropdown from './PickingVidgetDropdown.vue'
 
 export default {
   data () {
