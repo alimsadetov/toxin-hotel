@@ -35,7 +35,8 @@ export default {
       }
       this.valid = true
       this.addUser(email, password)
-      this.$router.push('/main')
+      // this.$router.push('/main')
+      this.$router.go(-1)
     }
   }
 }

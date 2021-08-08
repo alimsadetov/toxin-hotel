@@ -4,13 +4,12 @@
       <div class="date">
         <div class="arrival-text">прибытие</div>
         <div class="checkout-text">выезд</div>
-        <input type="date" class="arrival-date" placeholder="19.08.2034">
-        <input type="date" class="checkout-date" placeholder="19.08.2034">
+        <input type="date" class="arrival-date" v-model="picked1">
+        <input type="date" class="checkout-date" v-model="picked2">
       </div>
       <div class="guests-text">гости</div>
-      <input type="text" class="guests-dropdown" placeholder="Сколько гостей" readonly>
-      <picking-vidget-dropdown></picking-vidget-dropdown>
-      <router-link to="/rooms"><div class="button">подобрать номер</div></router-link>
+      <input type="number" class="guests-dropdown" v-model="amount">
+      <div class="button" @click="$router.push('/rooms')">подобрать номер</div>
   </div>
 </template>
 
@@ -20,7 +19,9 @@
 export default {
   data () {
     return {
-      picked: new Date()
+      picked1: '2021-05-30',
+      picked2: '2021-06-14',
+      amount: 3
     }
   }
 }
@@ -118,6 +119,7 @@ export default {
   border-color:#FFFFFF;
   text-align:center;
   padding-top:14px;
+  text-decoration: none;
 }
 
 .button:hover {

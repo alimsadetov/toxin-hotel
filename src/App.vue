@@ -25,11 +25,15 @@ export default {
       this.user.email = email
       this.user.password = password
       console.log(this.user.email)
+    },
+    isAuthored () {
+      return this.user.email
     }
   },
   provide () {
     return {
-      addUser: this.addUser
+      addUser: this.addUser,
+      isAuthored: this.isAuthored
     }
   }
 }
