@@ -23,7 +23,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-###Про проект
+### Про проект
 Макет: https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task?node-id=18370%3A2
 UI-kit этого отеля: https://github.com/alimsadetov/hotel
 Посмотреть сайт можно по ссылке https://toxin-hotel-lemon.vercel.app/
